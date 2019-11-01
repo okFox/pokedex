@@ -4,7 +4,7 @@ class SearchBy extends Component {
 
     renderHTML() {
         return /*html*/`
-        <h3>Search by:</h3>
+        
         <section class='search-section'>
             <div class='name-search'>
                 <h4>Name:</h4>
