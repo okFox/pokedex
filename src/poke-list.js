@@ -10,7 +10,9 @@ class PokeList extends Component {
             const props = { pokemon: pokemon };
             const pokecard = new PokeCard(props);
             const pokeCardDOM = pokecard.renderDOM();
+            pokeCardDOM.style.background = pokemon.color_1;
             dom.appendChild(pokeCardDOM);
+
         });
 
     }
