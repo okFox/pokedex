@@ -2,7 +2,7 @@ import Component from './Component.js';
 import Header from './src/Header.js';
 import SearchBy from './src/search-by.js';
 import SortBy from './src/sort-by.js';
-//import Pagination from './src/Pagination.js';
+import Pagination from './src/Pagination.js';
 //import PokeList from './src/poke-list.js';
 //import { getPokemon } from './services/pokemon-api.js';
 
@@ -21,7 +21,11 @@ class App extends Component {
         const sortBySection = new SortBy();
         sortHeader.appendChild(sortBySection.renderDOM());
 
-        
+        const pageSection = dom.querySelector('.pagination');
+        const pageP = new Pagination();
+        pageSection.appendChild(pageP.renderDOM());
+
+
 
     }
     
