@@ -34,12 +34,8 @@ class App extends Component {
         const response = await getPokemon();
    
         let filteredPokemonArr = response.results;
-        console.log(response);
+ 
         pokeListArray.update({ pokemon: filteredPokemonArr });
-
-        
-        
-
     }
 
     renderHTML() {
@@ -66,8 +62,6 @@ class App extends Component {
         `;
     }
 
-
-//closes class App line
 }
 
 export default App;
