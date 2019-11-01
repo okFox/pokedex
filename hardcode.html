@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="pokedex.css">
+    <title>Pokedex</title>
+</head>
+
+<body>
+
+    <main>
+        <h3>Search by:</h3>
+        <section class='search-section'>
+            <div class='name-search'>
+                <h4>Name:</h4>
+                <input type="search" name="https://alchemy-pokedex.herokuapp.com/" id="search-by-name">
+            </div>
+            <div class='type-search'>
+                <h4>Type:</h4>
+                <select name="search-by-type" id="search-by-type">
+                    <option value="all">Select All</option>
+                    <option value="all">electric</option>
+                    <option value="all">water</option>
+                </select>
+            </div>
+            <div class='speed-search'>
+                <h4>Speed:</h4>
+                <input type="number" name="speed-number" id="speed-number" min='5' max='180' step='5' placeholder='50'>
+            </div>
+        </section>
+
+        <h3>Sort by:</h3>
+        <section class='sort-section'>
+
+            <div>
+                <input type="radio" id="sort-by-name" name="sort" value="radio-sort" checked>
+                <label for="sort-by-name">Name</label>
+            </div>
+            <div>
+                <input type="radio" id="sort-by-type" name="sort" value="radio-sort">
+                <label for="sort-by-type">Type</label>
+            </div>
+            <div>
+                <input type="radio" id="sort-by-speed" name="sort" value="radio-sort">
+                <label for="sort-by-speed">Speed</label>
+            </div>
+        </section>
+
+        <section class='pagination'>1 of 10</section>
+        
+        <div class='card-wrapper'>
+            <ul class='pokemon'>
+                <li class='pokecard'>
+                    <div class='poke-image'><img src="./assets/pikachu.png" alt="Pikachu"></div>
+                    <div class='poke-name'>
+                        <h2>Pikachu</h2>
+                    </div>
+                    <div class='poke-type'>electric</div>
+                    <div class='poke-speed'>speed: 60</div>
+                </li>
+                <li class='pokecard'>
+                    <div class='poke-image'><img src="./assets/pikachu.png" alt="Pikachu"></div>
+                    <div class='poke-name'>
+                        <h2>Pikachu</h2>
+                    </div>
+                    <div class='poke-type'>electric</div>
+                    <div class='poke-speed'>speed: 60</div>
+                </li>
+                <li class='pokecard'>
+                    <div class='poke-image'><img src="./assets/pikachu.png" alt="Pikachu"></div>
+                    <div class='poke-name'>
+                        <h2>Pikachu</h2>
+                    </div>
+                    <div class='poke-type'>electric</div>
+                    <div class='poke-speed'>speed: 60</div>
+                </li>
+                <li class='pokecard'>
+                    <div class='poke-image'><img src="./assets/pikachu.png" alt="Pikachu"></div>
+                    <div class='poke-name'>
+                        <h2>Pikachu</h2>
+                    </div>
+                    <div class='poke-type'>electric</div>
+                    <div class='poke-speed'>speed: 60</div>
+                </li>
+                <li class='pokecard'>
+                    <div class='poke-image'><img src="./assets/pikachu.png" alt="Pikachu"></div>
+                    <div class='poke-name'>
+                        <h2>Pikachu</h2>
+                    </div>
+                    <div class='poke-type'>electric</div>
+                    <div class='poke-speed'>speed: 60</div>
+                </li>
+
+            </ul>
+        </div>
+        <section class='pagination'>1 of 10</section>
+    </main>
+
+
+
+
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>
