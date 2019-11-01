@@ -3,8 +3,8 @@ import Header from './src/Header.js';
 import SearchBy from './src/search-by.js';
 import SortBy from './src/sort-by.js';
 import Pagination from './src/Pagination.js';
-//import PokeList from './src/poke-list.js';
-//import { getPokemon } from './services/pokemon-api.js';
+import PokeList from './src/poke-list.js';
+import { getPokemon } from './services/pokemon-api.js';
 
 class App extends Component {
 
@@ -25,11 +25,22 @@ class App extends Component {
         const pageP = new Pagination();
         pageSection.appendChild(pageP.renderDOM());
 
+        const pokeCardSection = dom.querySelector('.card-wrapper');
 
+
+        const pokeListArray = new PokeList({ pokemon: [] });
+        pokeCardSection.appendChild(pokeListArray.renderDOM());
+
+        const response = await getPokemon();
+   
+        let filteredPokemonArr = response.results;
+        console.log(response);
+        pokeListArray.update({ pokemon: filteredPokemonArr });
+
+        
+        
 
     }
-    
-
 
     renderHTML() {
         return /*html*/`

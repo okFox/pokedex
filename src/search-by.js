@@ -8,7 +8,10 @@ class SearchBy extends Component {
         <section class='search-section'>
             <div class='name-search'>
                 <h4>Name:</h4>
-                <input type="search" name="search-by-name" id="search-by-name">
+                <form class="search">
+                    <input name="search">
+                    <button>🔍</button>
+                </form>
             </div>
             <div class='type-search'>
                 <h4>Type:</h4>

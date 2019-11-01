@@ -10,6 +10,7 @@ ul.pokemon {
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
+
 li {
     margin-top: 20px;
 }
@@ -38,11 +39,18 @@ img {
 
 input {
     font-size: 125%;
+    border-radius: 10px;
 }
+
 select {
     font-size: 125%;
 
 }
+
+button {
+    border-radius: 10px;
+}
+
 .pagination {
     background-color: aliceblue;
     text-align: center;
@@ -53,7 +61,6 @@ select {
     background-color: #C5D5E4;
     text-align: center;
 }
-
 
 .sort-section {
    padding: 25px; 
