@@ -27,15 +27,21 @@ class App extends Component {
 
         const pokeCardSection = dom.querySelector('.card-wrapper');
 
-
         const pokeListArray = new PokeList({ pokemon: [] });
         pokeCardSection.appendChild(pokeListArray.renderDOM());
 
-        const response = await getPokemon();
-   
-        let filteredPokemonArr = response.results;
- 
-        pokeListArray.update({ pokemon: filteredPokemonArr });
+        async function loadPokemon() {
+            const response = await getPokemon();
+            let filteredPokemonArr = response.results;
+            const totalResults = response.totalResults;
+            pokeListArray.update({ pokemon: filteredPokemonArr });
+            Pagination.update({ totalResults: totalResults });
+        }
+        loadPokemon();
+
+        window.addEventListener('hashchange', () => {
+            loadPokemon();
+        });
     }
 
     renderHTML() {
