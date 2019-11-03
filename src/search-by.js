@@ -3,19 +3,14 @@ import Component from '../Component.js';
 class SearchBy extends Component {
 
     onRender(form) {
-        //let searchNameInput = form.querySelector('#name-search');
-        //add speed and type search here later
-        //const queryString = window.location.hash.slice(1);
-        //const searchParams = new URLSearchParams(queryString);
-        //searchNameInput.value = searchParams.get('pokemon') || '';
-        
-
         form.addEventListener('submit', event => {
             event.preventDefault();
             const formData = new FormData(form);
             // can use formData.append ('name', 'value'); to customize / also can use foreEach to iterate
             const queryString = window.location.hash.slice(1);
             const searchParams = new URLSearchParams(queryString);
+            //let searchNameInput = form.querySelector('name-search');
+            //searchNameInput.value = searchParams.get('pokemon') || '';
 
             //searchParams.set('type', formData.get('type')); //when you wire up type search
             searchParams.set('pokemon', formData.get('name-search'));
@@ -30,10 +25,10 @@ class SearchBy extends Component {
     renderHTML() {
         return /*html*/`
 
-           <form class="search-by-name-form">
+           <form class="name-search">
             <h4>Name:</h4>
-               <input name="name-search">
-               <button type="submit" form="name-search" value="submit">🔍</button>
+               <input name="name-search" type='text'>
+               <button>🔍</button>
            </form>`;
     }   
 
