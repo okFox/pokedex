@@ -1,7 +1,11 @@
 
-const URL = 'https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=char&speed=50';
+
 
 export async function getPokemon() {  
-    const response = await fetch(URL);
-    return await response.json();
+    let url = 'https://alchemy-pokedex.herokuapp.com/api/pokedex';
+    let queryString = window.location.hash.slice(1);
+    url = `${url}?${queryString}`;
+    const response = await fetch(url);
+    let responseData = await response.json();
+    return responseData;
 }

@@ -31,13 +31,15 @@ class App extends Component {
         pokeCardSection.appendChild(pokeListArray.renderDOM());
 
         async function loadPokemon() {
-            const response = await getPokemon();
+            let response = await getPokemon();     
             let filteredPokemonArr = response.results;
-            const totalResults = response.totalResults;
+            //const totalResults = response.count;
             pokeListArray.update({ pokemon: filteredPokemonArr });
-            Pagination.update({ totalResults: totalResults });
+            //Pagination.update({ totalResults: totalResults });
+            
         }
         loadPokemon();
+        
 
         window.addEventListener('hashchange', () => {
             loadPokemon();
@@ -71,15 +73,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-// renderHTML() {
-//     return `<div></div>`;
-// } 
