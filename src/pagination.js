@@ -12,7 +12,6 @@ class Pagination extends Component {
         
         let page = 1; 
 
-
         function updateControls() {
             const queryString = window.location.hash.slice(1);
             const searchParams = new URLSearchParams(queryString);
@@ -25,7 +24,7 @@ class Pagination extends Component {
                 page = parsedPage;
             }
         }    
-        updateControls();
+        updateControls(); 
 
         window.addEventListener('hashchange', () => {
             updateControls();
@@ -51,7 +50,7 @@ class Pagination extends Component {
 
     renderHTML() {
         const perPage = 20;
-        const totalResults = this.props.totalResults;
+        const totalCount = this.props.totalCount;
         const queryString = window.location.hash.slice(1);
         const searchParams = new URLSearchParams(queryString);
 
@@ -64,27 +63,20 @@ class Pagination extends Component {
             page = parsedPage;
         }
     
-        if (!totalResults) {
+        if (!totalCount) {
             return /*html*/`
             <p class="paging">No results, try another search</p>
         `;
         }
-        const lastPage = Math.ceil(totalResults / perPage);
+        const lastPage = Math.ceil(totalCount / perPage);
 
         return /*html*/`
     <p class="paging">
         <button class="prev" disabled>◀</button>
         <span>Page ${page} of ${lastPage}</span>
         <button class="next">▶</button>
-    </p>
-`;
+    </p>`;
     }
 }
-
-    
-    
-
-    
-
 
 export default Pagination;

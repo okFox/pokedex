@@ -7,5 +7,7 @@ export async function getPokemon() {
     url = `${url}?${queryString}`;
     const response = await fetch(url);
     let responseData = await response.json();
+    console.log(responseData);
+    
     return responseData;
 }

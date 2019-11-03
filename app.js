@@ -22,7 +22,7 @@ class App extends Component {
         sortHeader.appendChild(sortBySection.renderDOM());
 
         const pageSection = dom.querySelector('.pagination');
-        const pageP = new Pagination();
+        const pageP = new Pagination({ totalCount: 0 });
         pageSection.appendChild(pageP.renderDOM());
 
         const pokeCardSection = dom.querySelector('.card-wrapper');
@@ -33,9 +33,9 @@ class App extends Component {
         async function loadPokemon() {
             let response = await getPokemon();     
             let filteredPokemonArr = response.results;
-            //const totalResults = response.count;
+            const totalCount = response.count;
             pokeListArray.update({ pokemon: filteredPokemonArr });
-            //Pagination.update({ totalResults: totalResults });
+            pageP.update({ totalCount: totalCount });
             
         }
         loadPokemon();

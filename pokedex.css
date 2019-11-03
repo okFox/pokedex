@@ -67,7 +67,7 @@ button {
    padding: 25px; 
 }
 
-.search-section {
+.search {
     display: flex;
     justify-content: space-evenly;
 

@@ -24,11 +24,18 @@ class SearchBy extends Component {
 
     renderHTML() {
         return /*html*/`
-
-           <form class="name-search">
+        
+           <form class="search">
+           <div class='name-search-div'>
             <h4>Name:</h4>
                <input name="name-search" type='text'>
                <button>🔍</button>
+            </div>
+               <div class='type-search'>
+                      <h4>Type:</h4>
+                      <select name="search-by-type" id="search-by-type">
+                     </select>
+                 </div>
            </form>`;
     }   
 
