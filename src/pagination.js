@@ -34,7 +34,6 @@ class Pagination extends Component {
             const queryString = window.location.hash.slice(1);
             const searchParams = new URLSearchParams(queryString);
             searchParams.set('page', page + increment);
-
             window.location.hash = searchParams.toString();
         }
 
@@ -45,7 +44,7 @@ class Pagination extends Component {
         nextButton.addEventListener('click', () => {
             updatePage(1);
         });
-        
+
     }
 
     renderHTML() {
@@ -72,9 +71,9 @@ class Pagination extends Component {
 
         return /*html*/`
     <p class="paging">
-        <button class="prev" disabled>◀</button>
+        <button class="prev" ${ page === 1 ? 'disabled' : '' }>◀</button>
         <span>Page ${page} of ${lastPage}</span>
-        <button class="next">▶</button>
+        <button class="next" ${page === lastPage ? 'disabled' : ''}>▶</button>
     </p>`;
     }
 }

@@ -14,7 +14,7 @@ class SearchBy extends Component {
 
             //searchParams.set('type', formData.get('type')); //when you wire up type search
             searchParams.set('pokemon', formData.get('name-search'));
-            //searchParams.set('page', 1);
+            searchParams.set('page', 1);
 
             window.location.hash = searchParams.toString();
 
