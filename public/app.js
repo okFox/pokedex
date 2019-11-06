@@ -1,8 +1,8 @@
 import Component from './Component.js';
-import Header from './src/Header.js';
+import Header from './src/header.js';
 import SearchBy from './src/search-by.js';
 import SortBy from './src/sort-by.js';
-import Pagination from './src/Pagination.js';
+import Pagination from './src/pagination.js';
 import PokeList from './src/poke-list.js';
 import { getPokemon } from './services/pokemon-api.js';
 
@@ -22,20 +22,28 @@ class App extends Component {
         sortHeader.appendChild(sortBySection.renderDOM());
 
         const pageSection = dom.querySelector('.pagination');
-        const pageP = new Pagination();
+        const pageP = new Pagination({ totalCount: 0 });
         pageSection.appendChild(pageP.renderDOM());
 
         const pokeCardSection = dom.querySelector('.card-wrapper');
 
-
         const pokeListArray = new PokeList({ pokemon: [] });
         pokeCardSection.appendChild(pokeListArray.renderDOM());
 
-        const response = await getPokemon();
-   
-        let filteredPokemonArr = response.results;
- 
-        pokeListArray.update({ pokemon: filteredPokemonArr });
+        async function loadPokemon() {
+            let response = await getPokemon();     
+            let filteredPokemonArr = response.results;
+            const totalCount = response.count;
+            pokeListArray.update({ pokemon: filteredPokemonArr });
+            pageP.update({ totalCount: totalCount });
+            
+        }
+        loadPokemon();
+        
+
+        window.addEventListener('hashchange', () => {
+            loadPokemon();
+        });
     }
 
     renderHTML() {
@@ -65,15 +73,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-// renderHTML() {
-//     return `<div></div>`;
-// } 
