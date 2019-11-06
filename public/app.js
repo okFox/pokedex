@@ -1,8 +1,8 @@
 import Component from './Component.js';
-import Header from './src/Header.js';
+import Header from './src/header.js';
 import SearchBy from './src/search-by.js';
 import SortBy from './src/sort-by.js';
-import Pagination from './src/Pagination.js';
+import Pagination from './src/pagination.js';
 import PokeList from './src/poke-list.js';
 import { getPokemon } from './services/pokemon-api.js';
 
